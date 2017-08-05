@@ -1,0 +1,7 @@
+#!/bin/bash
+while read version; do
+  while read config; do
+    cat Dockerfile.template | sed "s/\${VERSION}/$version/g" | sed "s/\${CONFIG}/$config/g" > Dockerfile.${version}_${config}
+  done <buildroot.defconfigs
+done <buildroot.versions
+
