@@ -10,7 +10,7 @@ RUN apk add --no-cache ca-certificates xz which sed make binutils build-base fle
  && rm buildroot.tar.bz2 \
  && mv buildroot-2017.02.5 buildroot \
  && cd buildroot \
- && make freescale_imx31_3stack_defconfig \
+ && make freescale_imx6dlsabreauto_defconfig \
  && make clean \
  && make
 CMD ["/bin/sh"]
