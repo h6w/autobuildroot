@@ -1,7 +1,7 @@
 #!/bin/bash
 while read version; do
   while read config; do
-    git -d ${version}_{$config}
+    git push origin --delete ${version}_{$config}
     git branch ${version}_${config}
     git checkout ${version}_${config}
     cat Dockerfile.template | sed "s/\${VERSION}/$version/g" | sed "s/\${CONFIG}/$config/g" > Dockerfile
