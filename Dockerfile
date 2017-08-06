@@ -10,7 +10,7 @@ RUN apk add --no-cache ca-certificates xz which sed make binutils build-base fle
  && rm buildroot.tar.bz2 \
  && mv buildroot-2017.02.5 buildroot \
  && cd buildroot \
- && make qemu_m68k_mcf5208_defconfig \
+ && make qemu_m68k_q800_defconfig \
  && make clean \
  && make
 CMD ["/bin/sh"]
