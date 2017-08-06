@@ -10,7 +10,7 @@ RUN apk add --no-cache ca-certificates xz which sed make binutils build-base fle
  && rm buildroot.tar.bz2 \
  && mv buildroot-2017.02.5 buildroot \
  && cd buildroot \
- && make olimex_imx233_olinuxino_defconfig \
+ && make openblocks_a6_defconfig \
  && make clean \
  && make
 CMD ["/bin/sh"]
