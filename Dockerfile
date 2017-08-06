@@ -10,7 +10,7 @@ RUN apk add --no-cache ca-certificates xz which sed make binutils build-base fle
  && rm buildroot.tar.bz2 \
  && mv buildroot-2017.02.5 buildroot \
  && cd buildroot \
- && make acmesystems_arietta_g25_256mb_defconfig \
+ && make arcturus_ucp1020_defconfig \
  && make clean \
  && make
 CMD ["/bin/sh"]
