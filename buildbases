@@ -1,0 +1,13 @@
+#!/bin/bash
+while read version; do
+    git push origin --delete base_${version}
+    git branch -D base_${version}
+    git branch base_${version}
+    git checkout base_${version}
+    cat Dockerfile.basetemplate | sed "s/\${VERSION}/$version/g" > Dockerfile
+    git add Dockerfile
+    git commit -m "Generated Dockerfile for base_${version}"
+    git push origin base_${version}
+    git checkout master
+done <buildroot.versions
+
