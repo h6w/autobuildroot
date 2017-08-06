@@ -10,7 +10,7 @@ RUN apk add --no-cache ca-certificates xz which sed make binutils build-base fle
  && rm buildroot.tar.bz2 \
  && mv buildroot-2017.02.5 buildroot \
  && cd buildroot \
- && make atmel_sama5d4_xplained_mmc_dev_defconfig \
+ && make bananapro_defconfig \
  && make clean \
  && make
 CMD ["/bin/sh"]
