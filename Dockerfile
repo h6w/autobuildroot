@@ -10,7 +10,7 @@ RUN apk add --no-cache ca-certificates xz which sed make binutils build-base fle
  && rm buildroot.tar.bz2 \
  && mv buildroot-2017.02.5 buildroot \
  && cd buildroot \
- && make mx25pdk_defconfig \
+ && make mx51evk_defconfig \
  && make clean \
  && make
 CMD ["/bin/sh"]
