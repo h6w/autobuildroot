@@ -10,7 +10,7 @@ RUN apk add --no-cache ca-certificates xz which sed make binutils build-base fle
  && rm buildroot.tar.bz2 \
  && mv buildroot-2017.02.5 buildroot \
  && cd buildroot \
- && make firefly_rk3288_demo_defconfig \
+ && make freescale_imx28evk_defconfig \
  && make clean \
  && make
 CMD ["/bin/sh"]
