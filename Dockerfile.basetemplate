@@ -1,5 +1,6 @@
 FROM alpine:3.6
 MAINTAINER Tudor Holton <development@tudorholton.com>
+ADD download.${VERSION} /build/download.${VERSION}
 RUN apk add --no-cache ca-certificates xz which sed make binutils build-base flex bison cmake git gcc g++ bash patch gzip bzip2 perl tar cpio python unzip rsync file bc wget \
  && mkdir /build \
  && cd /build \
@@ -9,5 +10,5 @@ RUN apk add --no-cache ca-certificates xz which sed make binutils build-base fle
  && mv buildroot-${VERSION} buildroot \
  && mkdir -p buildroot/dl \
  && cd buildroot/dl \
- && wget -i ../../download.${VERSION}
+ && wget -i /build/download.${VERSION}
 CMD ["/bin/sh"]
