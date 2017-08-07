@@ -1,5 +1,6 @@
-FROM tudorh/autobuildroot:base-${VERSION}
+FROM tudorh/autobuildroot:base_${VERSION}
 MAINTAINER Tudor Holton <development@tudorholton.com>
+WORKDIR /build/buildroot
 RUN make ${CONFIG}_defconfig \
  && make clean \
  && make
